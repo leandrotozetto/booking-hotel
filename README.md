@@ -41,8 +41,8 @@ Then run:
 
 ## Resources
 
-* [Bookings](#reference/recursos/contatos)
-* [Calendars](#reference/recursos/produtos)
+* [Bookings](#bookings)
+* [Calendars](#calendars)
 
 ### Verbs
 
