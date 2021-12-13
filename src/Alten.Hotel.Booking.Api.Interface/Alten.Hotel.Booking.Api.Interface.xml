@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Alten.Hotel.Booking.Api.Interface</name>
+    </assembly>
+    <members>
+        <member name="T:Alten.Hotel.Booking.Api.Interface.Controllers.BaseController">
+            <summary>
+            Base controller
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="F:Alten.Hotel.Booking.Api.Interface.Controllers.BaseController._notification">
+            <summary>
+            The notification
+            </summary>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Interface.Controllers.BaseController.#ctor(Alten.Hotel.Booking.Api.Domain.Interfaces.INotification)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Alten.Hotel.Booking.Api.Interface.Controllers.BaseController"/> class.
+            </summary>
+            <param name="notification">The notification.</param>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Interface.Controllers.BaseController.CreateResponse(System.Object)">
+            <summary>
+            Creates the response.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>Returns IActionResult.</returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Interface.Controllers.BaseController.CreateResponse">
+            <summary>
+            Creates the response.
+            </summary>
+            <returns>Returns IActionResult.</returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Interface.Controllers.BaseController.CreateErrorResponse">
+            <summary>
+            Creates the error response.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Alten.Hotel.Booking.Api.Interface.Controllers.BookingController">
+            <summary>
+            /Booking's controller
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="F:Alten.Hotel.Booking.Api.Interface.Controllers.BookingController._bookingApplication">
+            <summary>
+            The booking application
+            </summary>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Interface.Controllers.BookingController.#ctor(Alten.Hotel.Booking.Api.Domain.Interfaces.Applications.IBookingApplication,Alten.Hotel.Booking.Api.Domain.Interfaces.INotification)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Alten.Hotel.Booking.Api.Interface.Controllers.BookingController"/> class.
+            </summary>
+            <param name="bookingApplication">The booking application.</param>
+            <param name="notification">Teh notification.</param>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Interface.Controllers.BookingController.GetAsync(System.Guid)">
+             <summary>
+             Get the Booking.
+             </summary>
+             <param name="bookingId">The booking identifier.</param>
+             <returns>A booking</returns>
+             <remarks>
+             Sample request:
+            
+                 GET /0000000-0000-0000-0000-000000000000
+            
+             </remarks>
+             <response code="200">If the booking is found.</response>
+             <response code="204">If the booking isn't found.</response>
+             <response code="500">When something goes wrong.</response>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Interface.Controllers.BookingController.CreateAsync(Alten.Hotel.Booking.Api.Domain.Dto.BookingDto)">
+             <summary>
+             Creates the booking.
+             </summary>
+             <param name="bookingDto">The booking.</param>
+             <returns>Return booking's confirmation code</returns>
+             <remarks>
+             Sample request:
+            
+                 POST /Booking
+                 {
+                    "startDate": "2021-12-09",
+                    "endDate": "2021-12-09"
+                 }
+            
+             </remarks>
+             <response code="200">If the Booking is created.</response>
+             <response code="400">If the booking is invalid.</response>
+             <response code="500">When something goes wrong.</response>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Interface.Controllers.BookingController.UpdateAsync(System.Guid,Alten.Hotel.Booking.Api.Domain.Dto.BookingDto)">
+             <summary>
+             Update the booking.
+             </summary>
+             <param name="bookingId">The booking identifier.</param>
+             <param name="bookingDto">The booking.</param>
+             <returns>Return booking's confirmation code</returns>
+             <remarks>
+             Sample request:
+            
+                 PUT /Booking/00000000-0000-0000-0000-000000000000
+                 {
+                    "startDate": "2021-12-09",
+                    "endDate": "2021-12-09"
+                 }
+            
+             </remarks>
+             <response code="204">If the booking is successfully updated.</response>
+             <response code="400">If the booking is invalid.</response>
+             <response code="500">When something goes wrong.</response>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Interface.Controllers.BookingController.DeleteAsync(System.Guid)">
+             <summary>
+             Detele the Booking.
+             </summary>
+             <param name="bookingId">The booking identifier.</param>
+             <returns>A newly created TodoItem</returns>
+             <remarks>
+             Sample request:
+            
+                 GET /0000000-0000-0000-0000-000000000000
+            
+             </remarks>
+             <response code="204">If the booking is found.</response>
+             <response code="400">If the booking isn't found.</response>
+             <response code="500">When something goes wrong.</response>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Interface.Controllers.BookingController.CreateResponse(System.Object)">
+            <summary>
+            Creates the response.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>Returns IActionResult.</returns>
+        </member>
+        <member name="T:Alten.Hotel.Booking.Api.Interface.Controllers.CalendarController">
+            <summary>
+            /Booking's controller
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="F:Alten.Hotel.Booking.Api.Interface.Controllers.CalendarController._calendarApplication">
+            <summary>
+            The booking application
+            </summary>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Interface.Controllers.CalendarController.#ctor(Alten.Hotel.Booking.Api.Domain.Interfaces.Applications.ICalendarApplication,Alten.Hotel.Booking.Api.Domain.Interfaces.INotification)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Alten.Hotel.Booking.Api.Interface.Controllers.BookingController"/> class.
+            </summary>
+            <param name="calendarApplication">The booking application.</param>
+            <param name="notification">Teh notification.</param>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Interface.Controllers.CalendarController.GetAvailableDatesAsync">
+             <summary>
+             Get available dates.
+             </summary>
+             <returns>Available dates</returns>
+             <remarks>
+             Sample request:
+            
+                 GET /calendar/available
+            
+             </remarks>
+             <response code="200">If the dates are found</response>
+             <response code="204">If the dates aren't found.</response>
+             <response code="500">When something goes wrong</response>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Interface.Controllers.CalendarController.CreateResponse(System.Object)">
+            <summary>
+            Creates the response.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>Returns IActionResult.</returns>
+        </member>
+        <member name="T:Alten.Hotel.Booking.Api.Interface.Converters.DateTimeConverter">
+            <summary>
+            DateTime converter
+            </summary>
+            <seealso cref="T:System.Text.Json.Serialization.JsonConverter`1" />
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Interface.Converters.DateTimeConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Reads and converts the JSON />.
+            </summary>
+            <param name="reader">The reader.</param>
+            <param name="typeToConvert">The type to convert.</param>
+            <param name="options">An object that specifies serialization options to use.</param>
+            <returns>
+            The converted value.
+            </returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Interface.Converters.DateTimeConverter.Write(System.Text.Json.Utf8JsonWriter,System.DateTime,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Writes a specified value as JSON.
+            </summary>
+            <param name="writer">The writer to write to.</param>
+            <param name="value">The value to convert to JSON.</param>
+            <param name="options">An object that specifies serialization options to use.</param>
+        </member>
+        <member name="T:Alten.Hotel.Booking.Api.Interface.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Interface.Program.Main(System.String[])">
+            <summary>
+            Defines the entry point of the application.
+            </summary>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Interface.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Creates the host builder.
+            </summary>
+            <param name="args">The arguments.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Alten.Hotel.Booking.Api.Interface.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Interface.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Alten.Hotel.Booking.Api.Interface.Startup"/> class.
+            </summary>
+            <param name="configuration">The configuration.</param>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Interface.Startup.Configuration">
+            <summary>
+            Gets the configuration.
+            </summary>
+            <value>
+            The configuration.
+            </value>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Interface.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container. 
+            </summary>
+            <param name="services">The services.</param>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Interface.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app">The application.</param>
+            <param name="env">The env.</param>
+        </member>
+    </members>
+</doc>

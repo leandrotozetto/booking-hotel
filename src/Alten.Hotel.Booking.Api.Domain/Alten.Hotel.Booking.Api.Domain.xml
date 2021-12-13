@@ -1,0 +1,798 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Alten.Hotel.Booking.Api.Domain</name>
+    </assembly>
+    <members>
+        <member name="T:Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking">
+            <summary>
+            Booking Aggregate
+            </summary>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking.Id">
+            <summary>
+            Gets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking.CheckIn">
+            <summary>
+            Gets the check-in date.
+            </summary>
+            <value>
+            The check-in date.
+            </value>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking.CheckOut">
+            <summary>
+            Gets the check-out date.
+            </summary>
+            <value>
+            The check-out date.
+            </value>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking.Errors">
+            <summary>
+            Error list
+            </summary>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking.Empty">
+            <summary>
+            Gets the empty.
+            </summary>
+            <value>
+            The empty.
+            </value>
+        </member>
+        <member name="F:Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking.MAX_DAYS_IN_ADVANCE_TO_BOOK">
+            <summary>
+            Max days in advance to book room.
+            </summary>
+        </member>
+        <member name="F:Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking.MIN_DAYS_BEFORE_BOOKING">
+            <summary>
+            Min days to book room.
+            </summary>
+        </member>
+        <member name="F:Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking.MAX_DAYS_TO_STAY">
+            <summary>
+            Max days to stay.
+            </summary>
+        </member>
+        <member name="F:Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking.MAX_CHECK_OUT_DAYS">
+            <summary>
+            Gets the maximum checkout days.
+            </summary>
+            <value>
+            The maximum checkout days.
+            </value>
+        </member>
+        <member name="F:Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking.MAX_CHECK_IN_DAYS">
+            <summary>
+            Gets the maximum checkout days.
+            </summary>
+            <value>
+            The maximum checkout days.
+            </value>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking.NextAvailableCheckin">
+            <summary>
+            The next available check in date
+            </summary>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking.LastAvailableCheckIn">
+            <summary>
+            Gets the last avalible check in date.
+            </summary>
+            <value>
+            The last avalible check in date.
+            </value>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking.NextAvailableCheckOut">
+            <summary>
+            Gets the next avalible check out.
+            </summary>
+            <value>
+            The next avalible check out.
+            </value>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking.LastAvailableCheckOut">
+            <summary>
+            Gets the last avalible check out.
+            </summary>
+            <value>
+            The last avalible check out.
+            </value>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking"/> class.
+            </summary>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking.New(System.DateTime,System.DateTime)">
+            <summary>
+            Creates a new Booking
+            </summary>
+            <param name="startDate">The start date.</param>
+            <param name="endDate">The end date.</param>
+            <returns>IBooking</returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking.ChangeDate(System.DateTime,System.DateTime)">
+            <summary>
+            Changes the date.
+            </summary>
+            <param name="checkIn">The start date.</param>
+            <param name="checkOut">The end date.</param>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking.IsValid">
+            <summary>
+            Validates 
+            </summary>
+            <returns>Returns true if it's valid</returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking.CalculateDaysBetweenDates">
+            <summary>
+            Calculates the days between dates.
+            </summary>
+            <returns>Days between dates</returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking.IsValidSartDate">
+            <summary>
+            Checks if start date is valid
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking.ValidateDate(System.String,System.DateTime)">
+            <summary>
+            Validates the date.
+            </summary>
+            <param name="field">The field.</param>
+            <param name="date">The date.</param>
+        </member>
+        <member name="T:Alten.Hotel.Booking.Api.Domain.Aggregates.HotelAggregate.AvailableDate">
+            <summary>
+            Date Available
+            </summary>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Aggregates.HotelAggregate.AvailableDate.Date">
+            <summary>
+            Gets the date.
+            </summary>
+            <value>
+            The date.
+            </value>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Aggregates.HotelAggregate.AvailableDate.IsAvailable">
+            <summary>
+            Gets a value indicating whether this instance is available.
+            </summary>
+            <value>
+              <c>true</c> if this instance is available; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Aggregates.HotelAggregate.AvailableDate.BookingId">
+            <summary>
+            Gets the booking identifier.
+            </summary>
+            <value>
+            The booking identifier.
+            </value>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Aggregates.HotelAggregate.AvailableDate.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:Alten.Hotel.Booking.Api.Domain.Aggregates.HotelAggregate.AvailableDate"/> class from being created.
+            </summary>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Aggregates.HotelAggregate.AvailableDate.New(System.DateTime,System.Nullable{System.Guid})">
+            <summary>
+            News the specified date.
+            </summary>
+            <param name="date">The date.</param>
+            <param name="bookingId">The booking identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Alten.Hotel.Booking.Api.Domain.Dto.AvailableDateDto">
+            <summary>
+            Date Available dto
+            </summary>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Dto.AvailableDateDto.Date">
+            <summary>
+            Gets the date.
+            </summary>
+            <value>
+            The date.
+            </value>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Dto.AvailableDateDto.IsAvailable">
+            <summary>
+            Gets a value indicating whether this instance is available.
+            </summary>
+            <value>
+              <c>true</c> if this instance is available; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Dto.AvailableDateDto.New(System.DateTime,System.Boolean)">
+            <summary>
+            News the specified date.
+            </summary>
+            <param name="date">The date.</param>
+            <param name="isAvailable">if set to <c>true</c> [is available].</param>
+            <returns></returns>
+        </member>
+        <member name="T:Alten.Hotel.Booking.Api.Domain.Dto.BookingDto">
+            <summary>
+            Booking Dto
+            </summary>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Dto.BookingDto.CheckIn">
+            <summary>
+            Gets the start date.
+            </summary>
+            <value>
+            The start date.
+            </value>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Dto.BookingDto.CheckOut">
+            <summary>
+            Gets the end date.
+            </summary>
+            <value>
+            The end date.
+            </value>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Dto.BookingDto.Empty">
+            <summary>
+            Gets the empty.
+            </summary>
+            <value>
+            The empty.
+            </value>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Dto.BookingDto.New(System.DateTime,System.DateTime)">
+            <summary>
+            News the specified check in.
+            </summary>
+            <param name="checkIn">The check in.</param>
+            <param name="checkOut">The check out.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Alten.Hotel.Booking.Api.Domain.Dto.BookingResponseDto">
+            <summary>
+            /
+            </summary>
+            <seealso cref="T:Alten.Hotel.Booking.Api.Domain.Dto.BookingDto" />
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Dto.BookingResponseDto.Id">
+            <summary>
+            Gets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Dto.BookingResponseDto.Empty">
+            <summary>
+            Gets the empty.
+            </summary>
+            <value>
+            The empty.
+            </value>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Dto.BookingResponseDto.New(System.Guid,System.DateTime,System.DateTime)">
+            <summary>
+            News the specified identifier.
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="checkIn">The check in.</param>
+            <param name="checkOut">The check out.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Alten.Hotel.Booking.Api.Domain.Dto.ErrorDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Dto.ErrorDto.Errors">
+            <summary>
+            Gets or sets the errors.
+            </summary>
+            <value>
+            The errors.
+            </value>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Dto.ErrorDto.New(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            News the specified errors.
+            </summary>
+            <param name="errors">The errors.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Alten.Hotel.Booking.Api.Domain.Interfaces.Aggregates.IBooking">
+            <summary>
+            Booking's contract
+            </summary>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Interfaces.Aggregates.IBooking.Id">
+            <summary>
+            Gets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Interfaces.Aggregates.IBooking.CheckIn">
+            <summary>
+            Gets the check-in date.
+            </summary>
+            <value>
+            The check-in date.
+            </value>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Interfaces.Aggregates.IBooking.CheckOut">
+            <summary>
+            Gets the check-out date.
+            </summary>
+            <value>
+            The check-out date.
+            </value>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Interfaces.Aggregates.IBooking.Errors">
+            <summary>
+            Error list
+            </summary>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Interfaces.Aggregates.IBooking.ChangeDate(System.DateTime,System.DateTime)">
+            <summary>
+            Changes the date.
+            </summary>
+            <param name="checkIn">The start date.</param>
+            <param name="checkOut">The end date.</param>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Interfaces.Aggregates.IBooking.IsValid">
+            <summary>
+            Validates 
+            </summary>
+            <returns>Returns true if it's invalid</returns>
+        </member>
+        <member name="T:Alten.Hotel.Booking.Api.Domain.Interfaces.Applications.IBookingApplication">
+            <summary>
+            Booking's orchestrator.
+            </summary>
+            <seealso cref="T:System.IDisposable" />
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Interfaces.Applications.IBookingApplication.GetAsync(System.Guid)">
+            <summary>
+            Gets the by identifier.
+            </summary>
+            <param name="bookingId">The booking identifier.</param>
+            <returns>Returns the booking</returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Interfaces.Applications.IBookingApplication.CreateAsync(Alten.Hotel.Booking.Api.Domain.Dto.BookingDto)">
+            <summary>
+            Creates the booking.
+            </summary>
+            <param name="bookingDto">The booking insert dto.</param>
+            <returns>Returns true if successfully created.</returns>
+            <returns></returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Interfaces.Applications.IBookingApplication.UpdateAsync(System.Guid,Alten.Hotel.Booking.Api.Domain.Dto.BookingDto)">
+            <summary>
+            Updates the booking.
+            </summary>
+            <param name="bookingId">The booking identifier.</param>
+            <param name="bookingDto">The booking.</param>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Interfaces.Applications.IBookingApplication.DeleteAsync(System.Guid)">
+            <summary>
+            Updates the booking.
+            </summary>
+            <param name="bookingId">The booking identifier.</param>
+        </member>
+        <member name="T:Alten.Hotel.Booking.Api.Domain.Interfaces.Applications.ICalendarApplication">
+            <summary>
+            Calendar application
+            </summary>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Interfaces.Applications.ICalendarApplication.GetAvailableDatesAsync">
+            <summary>
+            Get available dates of period.
+            </summary>
+            <returns>Returns list of dates.</returns>
+        </member>
+        <member name="T:Alten.Hotel.Booking.Api.Domain.Interfaces.INotification">
+            <summary>
+            Notification's contract
+            </summary>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Interfaces.INotification.Errors">
+            <summary>
+            Gets the errors.
+            </summary>
+            <value>
+            The errors.
+            </value>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Interfaces.INotification.HasErrors">
+            <summary>
+            Gets a value indicating whether this instance has errors.
+            </summary>
+            <value>
+              <c>true</c> if this instance has errors; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Interfaces.INotification.HasCriticalError">
+            <summary>
+            Gets a value indicating whether this instance has critical error.
+            </summary>
+            <value>
+              <c>true</c> if this instance has critical error; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Interfaces.INotification.AddNotification(System.String)">
+            <summary>
+            Adds the specified notification.
+            </summary>
+            <param name="notification">The notification.</param>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Interfaces.INotification.AddNotification(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Adds the specified notifications.
+            </summary>
+            <param name="notifications">The notifications.</param>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Interfaces.INotification.AddCritical(System.String)">
+            <summary>
+            Adds the critical.
+            </summary>
+            <param name="notification">The notification.</param>
+        </member>
+        <member name="T:Alten.Hotel.Booking.Api.Domain.Interfaces.Repositories.IBookingRepository">
+            <summary>
+            Booking's repository contract.
+            </summary>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Interfaces.Repositories.IBookingRepository.InsertAsync(Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking)">
+            <summary>
+            Inserts the specified booking.
+            </summary>
+            <param name="booking">The booking.</param>
+            <returns>Returns true if successfully inserted.</returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Interfaces.Repositories.IBookingRepository.GetAsync(System.Guid)">
+            <summary>
+            Gets the specified booking.
+            </summary>
+            <param name="bookingId">The identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Interfaces.Repositories.IBookingRepository.DeleteAsync(Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking)">
+            <summary>
+            Deletes the booking.
+            </summary>
+            <param name="booking">The booking.</param>
+            <returns>Returns true if successfully deleted.</returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Interfaces.Repositories.IBookingRepository.UpdateAsync(Alten.Hotel.Booking.Api.Domain.Aggregates.BookingAggregate.Booking)">
+            <summary>
+            Updates the booking.
+            </summary>
+            <param name="booking">The booking.</param>
+            <returns>Returns true if successfully updated.</returns>
+        </member>
+        <member name="T:Alten.Hotel.Booking.Api.Domain.Interfaces.Repositories.ICalendarRepository">
+            <summary>
+            Hotel repository
+            </summary>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Interfaces.Repositories.ICalendarRepository.GetAvailableDatesAsync(System.DateTime,System.DateTime,System.Nullable{System.Guid})">
+            <summary>
+            Gets the available dates asynchronous.
+            </summary>
+            <param name="StartDate">The start date.</param>
+            <param name="EndDate">The end date.</param>
+            <param name="currentBookingId">Current BookingId.</param>
+            <returns>Return list of available dates</returns>
+        </member>
+        <member name="T:Alten.Hotel.Booking.Api.Domain.Interfaces.Repositories.IRepository`1">
+            <summary>
+            Interface that defines the repository.
+            </summary>
+            <typeparam name="T">Type of entity.</typeparam>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Interfaces.Repositories.IRepository`1.InsertAsync(`0)">
+            <summary>
+            Inserts the entity.
+            </summary>
+            <param name="entity">The entity.</param>
+            <returns>Returns true if successfully inserted.</returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Interfaces.Repositories.IRepository`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Gets the entity.
+            </summary>
+            <param name="filter">The filter.</param>
+            <returns>Returns the entity</returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Interfaces.Repositories.IRepository`1.DeleteAsync(`0)">
+            <summary>
+            Deletes the entity.
+            </summary>
+            <param name="entity">The entity.</param>
+            <returns>Returns true if successfully deleted.</returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Interfaces.Repositories.IRepository`1.UpdateAsync(`0)">
+            <summary>
+            Updates the specified entity.
+            </summary>
+            <param name="entity">The entity.</param>
+            <returns>Returns true if successfully updated.</returns>
+        </member>
+        <member name="T:Alten.Hotel.Booking.Api.Domain.Interfaces.Services.IBookingService">
+            <summary>
+            BookingService's contract
+            </summary>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Interfaces.Services.IBookingService.CreateReservationAsync(Alten.Hotel.Booking.Api.Domain.Interfaces.Aggregates.IBooking)">
+            <summary>
+            Creates a new booking.
+            </summary>
+            <param name="booking">The booking.</param>
+            <returns>Returns booking's confirmation id.</returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Interfaces.Services.IBookingService.UpdateReservationAsync(Alten.Hotel.Booking.Api.Domain.Interfaces.Aggregates.IBooking)">
+            <summary>
+            Updates a new booking.
+            </summary>
+            <param name="booking">The booking.</param>
+            <returns>Returns true if it's was successfully updated.</returns>
+        </member>
+        <member name="T:Alten.Hotel.Booking.Api.Domain.Interfaces.Services.ICalendarService">
+            <summary>
+            alendar service's contract
+            </summary>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Interfaces.Services.ICalendarService.GetAvailableDatesAsync(System.Nullable{System.Guid})">
+            <summary>
+            Get available dates of period.
+            </summary>
+            <returns>Returns list of dates.</returns>
+        </member>
+        <member name="T:Alten.Hotel.Booking.Api.Domain.Notification">
+            <summary>
+            Notification entity
+            </summary>
+            <seealso cref="T:Alten.Hotel.Booking.Api.Domain.Interfaces.INotification" />
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Notification.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Alten.Hotel.Booking.Api.Domain.Notification"/> class.
+            </summary>
+        </member>
+        <member name="F:Alten.Hotel.Booking.Api.Domain.Notification._errors">
+            <summary>
+            The errors
+            </summary>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Notification.Errors">
+            <summary>
+            Gets the errors.
+            </summary>
+            <value>
+            The errors.
+            </value>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Notification.HasErrors">
+            <summary>
+            Gets a value indicating whether this instance has errors.
+            </summary>
+            <value>
+              <c>true</c> if this instance has errors; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Alten.Hotel.Booking.Api.Domain.Notification.HasCriticalError">
+            <summary>
+            Gets a value indicating whether this instance has critical error.
+            </summary>
+            <value>
+              <c>true</c> if this instance has critical error; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Notification.AddNotification(System.String)">
+            <summary>
+            Adds the specified notification.
+            </summary>
+            <param name="notification">The notification.</param>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Notification.AddNotification(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Adds the specified notifications.
+            </summary>
+            <param name="notifications">The notifications.</param>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Notification.AddCritical(System.String)">
+            <summary>
+            Adds the critical.
+            </summary>
+            <param name="notification">The notification.</param>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Notification.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:Alten.Hotel.Booking.Api.Domain.Services.BookingService">
+            <summary>
+            Booking service.
+            </summary>
+        </member>
+        <member name="F:Alten.Hotel.Booking.Api.Domain.Services.BookingService._bookingRepository">
+            <summary>
+            Booking repository.
+            </summary>
+        </member>
+        <member name="F:Alten.Hotel.Booking.Api.Domain.Services.BookingService._calendarService">
+            <summary>
+            The calendar service
+            </summary>
+        </member>
+        <member name="F:Alten.Hotel.Booking.Api.Domain.Services.BookingService._notification">
+            <summary>
+            Notification
+            </summary>
+        </member>
+        <member name="F:Alten.Hotel.Booking.Api.Domain.Services.BookingService._logger">
+            <summary>
+            The logger
+            </summary>
+        </member>
+        <member name="F:Alten.Hotel.Booking.Api.Domain.Services.BookingService.disposedValue">
+            <summary>
+            The disposed value
+            </summary>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Services.BookingService.#ctor(Alten.Hotel.Booking.Api.Domain.Interfaces.Services.ICalendarService,Alten.Hotel.Booking.Api.Domain.Interfaces.Repositories.IBookingRepository,Alten.Hotel.Booking.Api.Domain.Interfaces.INotification,Microsoft.Extensions.Logging.ILogger{Alten.Hotel.Booking.Api.Domain.Services.BookingService})">
+            <summary>
+            Creates a new BookingService.
+            </summary>
+            <param name="calendarService">The calendar repository.</param>
+            <param name="bookingRepository">The booking repository.</param>
+            <param name="notification">the notification.</param>
+            <param name="logger">The log.</param>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Services.BookingService.CreateReservationAsync(Alten.Hotel.Booking.Api.Domain.Interfaces.Aggregates.IBooking)">
+            <summary>
+            Creates a new booking.
+            </summary>
+            <param name="booking">The booking.</param>
+            <returns>Returns booking's confirmation id.</returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Services.BookingService.UpdateReservationAsync(Alten.Hotel.Booking.Api.Domain.Interfaces.Aggregates.IBooking)">
+            <summary>
+            Updates a new booking.
+            </summary>
+            <param name="booking">The booking.</param>
+            <returns>Returns true if it's was successfully updated.</returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Services.BookingService.InsertAsync(Alten.Hotel.Booking.Api.Domain.Interfaces.Aggregates.IBooking)">
+            <summary>
+            Inserts new booking on database
+            </summary>
+            <param name="booking"></param>
+            <returns>Returns true if it was successfully inserted</returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Services.BookingService.UpdateAsync(Alten.Hotel.Booking.Api.Domain.Interfaces.Aggregates.IBooking)">
+            <summary>
+            Updates new booking on database
+            </summary>
+            <param name="booking"></param>
+            <returns>Returns true if it was successfully updated</returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Services.BookingService.IsValid(Alten.Hotel.Booking.Api.Domain.Interfaces.Aggregates.IBooking)">
+            <summary>
+            Checks is the booking is valid.
+            </summary>
+            <param name="booking">The booking.</param>
+            <returns>Returns true is it's valid.</returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Services.BookingService.CheckAvailabilityAsync(System.DateTime,System.DateTime,System.Nullable{System.Guid})">
+            <summary>
+            Checks if the dates are available.
+            </summary>
+            <param name="checkIn"></param>
+            <param name="checkout"></param>
+            <param name="excludeBookingId">Current BookingId.</param>
+            <returns>Returns true is the date is available.</returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Services.BookingService.IsSelectedDateAvailable(System.Collections.Generic.IEnumerable{Alten.Hotel.Booking.Api.Domain.Aggregates.HotelAggregate.AvailableDate},System.Collections.Generic.IEnumerable{System.DateTime})">
+            <summary>
+            Check if the selected dates are availables.
+            </summary>
+            <param name="availableDatesInPeriod">Available dates</param>
+            <param name="selectedDatesOfStay">Selected dates</param>
+            <returns>Returns true if it's valid</returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Services.BookingService.IsBookingDatesValid(System.DateTime,System.DateTime,System.DateTime,System.DateTime)">
+            <summary>
+            Checks if the booking's dates is invalid.
+            </summary>
+            <param name="checkIn">Check-in's date.</param>
+            <param name="checkout">Check-out's date.</param>
+            <param name="fisrtAvailableDate">First date available.</param>
+            <param name="lastAvailableDate">Last date available.</param>
+            <returns>Retuns true if booking's dates is valid</returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Services.BookingService.GetDatesBetweenCheckInAndCheckOut(System.DateTime,System.DateTime)">
+            <summary>
+            Get dates between CheckIn and CheckOut.
+            </summary>
+            <param name="checkIn">CheckIn's date</param>
+            <param name="checkout">CheckOut's date</param>
+            <returns>Returns list of dates.</returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Services.BookingService.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Services.BookingService.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:Alten.Hotel.Booking.Api.Domain.Services.CalendarService">
+            <summary>
+            Calendar service
+            </summary>
+            <seealso cref="T:Alten.Hotel.Booking.Api.Domain.Interfaces.Services.ICalendarService" />
+        </member>
+        <member name="F:Alten.Hotel.Booking.Api.Domain.Services.CalendarService._calendarRepository">
+            <summary>
+            Calendar repository.
+            </summary>
+        </member>
+        <member name="F:Alten.Hotel.Booking.Api.Domain.Services.CalendarService._logger">
+            <summary>
+            The logger
+            </summary>
+        </member>
+        <member name="F:Alten.Hotel.Booking.Api.Domain.Services.CalendarService._notification">
+            <summary>
+            The notification
+            </summary>
+        </member>
+        <member name="F:Alten.Hotel.Booking.Api.Domain.Services.CalendarService.disposedValue">
+            <summary>
+            The disposed value
+            </summary>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Services.CalendarService.#ctor(Alten.Hotel.Booking.Api.Domain.Interfaces.Repositories.ICalendarRepository,Alten.Hotel.Booking.Api.Domain.Interfaces.INotification,Microsoft.Extensions.Logging.ILogger{Alten.Hotel.Booking.Api.Domain.Services.CalendarService})">
+            <summary>
+            Creates a new BookingService.
+            </summary>
+            <param name="calendarRepository">The calendar repository.</param>
+            <param name="notification">The notification.</param>
+            <param name="logger">The log.</param>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Services.CalendarService.GetAvailableDatesAsync(System.Nullable{System.Guid})">
+            <summary>
+            Get available dates of period.
+            </summary>
+            <returns>Returns list of dates.</returns>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Services.CalendarService.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:Alten.Hotel.Booking.Api.Domain.Services.CalendarService.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+    </members>
+</doc>
